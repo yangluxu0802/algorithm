@@ -25,7 +25,29 @@ public class Solution {
         return str.equals(newStr.toString());
     }
 
+    /*
+    *
+        作者：guanpengchn
+        链接：https://leetcode.cn/problems/palindrome-number/solution/hua-jie-suan-fa-9-hui-wen-shu-by-guanpengchn/
+        来源：力扣（LeetCode）
+        著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
+    *
+    *
+    * */
+
+    public boolean isPalindrome2(int x) {
+        if(x < 0)
+            return false;
+        int cur = 0;
+        int num = x;
+        while(num != 0) {
+            cur = cur * 10 + num % 10;
+            num /= 10;
+        }
+        return cur == x;
+    }
+
     public static void main(String[] args) {
-        System.out.println(new Solution().isPalindrome(121));
+        System.out.println(new Solution().isPalindrome2(121));
     }
 }
